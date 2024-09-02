@@ -1,0 +1,14 @@
+server:
+  port: 7000
+spring:
+  mvc:
+    static-path-pattern: /static/**
+    view:
+      prefix: /static/
+      suffix: .html
+#springdoc:
+  #api-docs:
+   # enabled: false
+  #swagger-ui:
+  #  path: /portafolio-kosmos/swagger-ui.html
+  #  supportedSubmitMethods: '"get", "put", "post", "patch", "delete"'

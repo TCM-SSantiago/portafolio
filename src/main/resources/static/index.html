@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Portafolio Kosmos</title>
+  <script>
+	  document.addEventListener("DOMContentLoaded", function() {
+	    var form = document.getElementById("portfolio-form");
+	    form.addEventListener("submit", function(event) {
+	      event.preventDefault();
+	      generarPortafolio();
+	    });
+		
+		var excelButton = document.getElementById("excel-button");
+		excelButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        generarPortafolioXls();
+    });
+	  });
+	
+	  function generarPortafolio() {
+	    var cpty = document.getElementById("cpty").value;
+	    var fecha = document.getElementById("fecha").value;
+	
+	    var url = "/portafolio?cpty=" + encodeURIComponent(cpty) + "&fecha=" + encodeURIComponent(fecha);
+	
+	    window.open(url, "_blank");
+	  }
+	  
+	  function generarPortafolioXls() {
+	    var cpty = document.getElementById("cpty").value;
+	    var fecha = document.getElementById("fecha").value;
+	
+	    var url = "/xls?cpty=" + encodeURIComponent(cpty) + "&fecha=" + encodeURIComponent(fecha);
+	
+	    window.open(url, "_blank");
+	  }
+	</script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      color: #333333;
+      text-align: center;
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+
+    form {
+      background-color: #f0ecec;
+      width: 80%;
+      max-width: 400px;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-left: 30px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #7e7d7d;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #999999;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-style: italic;
+      color: #000000;
+    }
+
+    input[type="submit"], input[type="button"] {
+      background-color: #ff9900;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #dd620f;
+    }
+
+    .links {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      text-align: right;
+      margin-top: 20px;
+    }
+
+    .links a {
+      display: block;
+      margin-bottom: 5px;
+      color: #da5b11ce;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="/logo-base.svg" alt="Logo de Banco Base" style="width: 300px;">
+    <h1>Portafolio Kosmos</h1>
+    <br>
+  </header>
+
+  <form id="portfolio-form">
+    <label for="cpty">Contraparte (Nombre corto o Nombre):</label>
+    <input type="text" id="cpty" name="cpty" required placeholder="Nombre en Kondor" style="font-style: italic;">
+
+    <label for="fecha">Fecha:</label>
+    <input type="text" id="fecha" name="fecha" required placeholder="Formato de fecha yyyymmdd" style="font-style: italic;">
+
+    <input type="submit" value="Generar Portafolio">
+	<input type="button" id="excel-button" value="Generar Excel">
+
+  </form>
+
+  <div class="links">
+    <a href="https://www.tcmpartners.com" target="_blank" rel="noopener noreferrer">Developed by: TCM Partners</a>
+    <a href="mailto:soporte@tcmpartners.com">Send email to TCM Partners</a>
+    <br/>
+    <a href="https://github.com/thombergs/code-examples/blob/master/LICENSE" target="_blank" rel="noopener noreferrer">License</a>
+  </div>
+</body>
+</html>

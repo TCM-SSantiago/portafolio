@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jdbcDataAdapter class="net.sf.jasperreports.data.jdbc.JdbcDataAdapterImpl">
+  <name>New Data Adapter 1</name>
+  <classpath>E:\Microsoft JDBC Driver 6.0 for SQL Server\sqljdbc_8.2\enu\mssql-jdbc-8.2.2.jre8.jar</classpath>
+  <classpath>E:\Microsoft JDBC Driver 6.0 for SQL Server\sqljdbc_8.2\enu\mssql-jdbc-8.2.2.jre11.jar</classpath>
+  <classpath>E:\Microsoft JDBC Driver 6.0 for SQL Server\sqljdbc_8.2\enu\mssql-jdbc-8.2.2.jre13.jar</classpath>
+  <driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver>
+  <username>abenitez</username>
+  <password>Finastra_123</password>
+  <url>jdbc:sqlserver://172.24.19.102;instanceName=KPLUS_DBO;databaseName=kplus</url>
+  <database></database>
+  <savePassword>true</savePassword>
+  <serverAddress></serverAddress>
+</jdbcDataAdapter>
